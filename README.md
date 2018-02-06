@@ -15,7 +15,6 @@ docker network create nginx-proxy
 ```
 
 ```
-cd
 git clone https://github.com/ykpythemind/nginx-proxy
 cd nginx-proxy
 docker-compose up -d
@@ -30,7 +29,9 @@ in another repository
 version: '3'
 services:
   nginx:
-    build: .
+    image: nginx
+    # ports:
+    # - "8080:80"
     # volumes:
     #  - .:/var/www
     environment:
@@ -44,3 +45,5 @@ networks:
     external:
       name: nginx-proxy
 ```
+
+Specify network 'nginx-proxy'
